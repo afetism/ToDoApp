@@ -1,8 +1,5 @@
 const signUp = document.getElementById("signup");
-signUp.addEventListener("click", function (event) {
-  event.preventDefault(); 
-  register();
-});
+signUp.addEventListener("click",register)
 
 const registerEmail = document.getElementById("registrationemail");
 const registerPassword = document.getElementById("registrationPassword");
@@ -11,7 +8,7 @@ const registerName = document.getElementById("registrationName");
 async function register() {
   try {
  
-    let response = await fetch("http://localhost:5001/api/users/register", {
+    let response = await fetch("http://localhost:5001/users/register", {
       method: "POST",
       body: JSON.stringify({
         email: registerEmail.value,  
